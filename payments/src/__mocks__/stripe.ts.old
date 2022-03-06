@@ -1,0 +1,11 @@
+// A more realistic approach when testing an external API
+// is actually sending req to that endpoint, not mocking it
+
+export const stripe = {
+  charges: {
+    //@ts-ignore
+    create: jest.fn().mockResolvedValue({
+      id: 'abcd',
+    }),
+  },
+};
